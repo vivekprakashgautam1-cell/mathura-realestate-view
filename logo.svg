@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 120">
+  <circle cx="60" cy="60" r="54" fill="none" stroke="#c9a24b" stroke-width="4"/>
+  <path d="M30 76 L47 36 L60 58 L73 36 L90 76" fill="none" stroke="#c9a24b" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="24" y1="84" x2="96" y2="84" stroke="#f6f4ef" stroke-width="5" stroke-linecap="round"/>
+  <text x="138" y="58" font-family="Segoe UI, Arial, sans-serif" font-size="32" font-weight="800" fill="#ffffff">Mathura</text>
+  <text x="138" y="94" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="700" fill="#c9a24b">RealEstate View</text>
+</svg>
