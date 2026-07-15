@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mathura RealEstate View | Trusted Real Estate Agency</title>
+<meta name="description" content="Mathura RealEstate View - a reliable and trustworthy real estate agency helping you buy, sell and rent property with confidence.">
+<style>
+  :root{
+    --navy:#0f2438;
+    --navy-dark:#0a1a29;
+    --gold:#c9a24b;
+    --light:#f6f4ef;
+    --gray:#5c6773;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Segoe UI', Arial, sans-serif;color:var(--navy);background:var(--light);line-height:1.6;}
+  a{text-decoration:none;color:inherit;}
+  ul{list-style:none;}
+  .container{max-width:1100px;margin:0 auto;padding:0 24px;}
+
+  header{position:fixed;top:0;left:0;right:0;background:var(--navy);z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.2);}
+  .navbar{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1100px;margin:0 auto;}
+  .logo{color:#fff;font-size:1.3rem;font-weight:700;letter-spacing:.5px;}
+  .logo span{color:var(--gold);}
+  .nav-links{display:flex;gap:28px;}
+  .nav-links a{color:#e8e8e8;font-weight:500;transition:color .2s;}
+  .nav-links a:hover{color:var(--gold);}
+  .nav-cta{background:var(--gold);color:var(--navy-dark);padding:9px 18px;border-radius:6px;font-weight:700;}
+  .menu-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;}
+  .menu-toggle span{width:26px;height:3px;background:#fff;border-radius:2px;}
+
+  .hero{background:linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);color:#fff;padding:170px 24px 100px;text-align:center;}
+  .hero h1{font-size:2.6rem;margin-bottom:16px;font-weight:800;}
+  .hero h1 span{color:var(--gold);}
+  .hero p{max-width:640px;margin:0 auto 32px;color:#cfd6dd;font-size:1.1rem;}
+  .btn-group{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+  .btn{display:inline-block;padding:14px 30px;border-radius:6px;font-weight:700;transition:transform .2s, opacity .2s;}
+  .btn-primary{background:var(--gold);color:var(--navy-dark);}
+  .btn-outline{border:2px solid #fff;color:#fff;}
+  .btn:hover{transform:translateY(-2px);opacity:.92;}
+
+  section{padding:80px 24px;}
+  .section-title{text-align:center;margin-bottom:50px;}
+  .section-title h2{font-size:2rem;margin-bottom:12px;}
+  .section-title p{color:var(--gray);max-width:600px;margin:0 auto;}
+  .section-title .tag{color:var(--gold);font-weight:700;text-transform:uppercase;letter-spacing:1px;font-size:.85rem;display:block;margin-bottom:10px;}
+
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;}
+  .about-grid img{width:100%;border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,.15);}
+  .about-text h3{font-size:1.6rem;margin-bottom:16px;}
+  .about-text p{color:var(--gray);margin-bottom:16px;}
+  .trust-points{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px;}
+  .trust-points li{padding-left:26px;position:relative;color:var(--navy);font-weight:600;}
+  .trust-points li::before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:900;}
+
+  .services{background:#fff;}
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  .service-card{background:var(--light);padding:32px 26px;border-radius:10px;text-align:center;border:1px solid #e6e2d8;transition:transform .2s, box-shadow .2s;}
+  .service-card:hover{transform:translateY(-6px);box-shadow:0 12px 24px rgba(0,0,0,.08);}
+  .service-icon{width:56px;height:56px;background:var(--navy);color:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin:0 auto 18px;}
+  .service-card h3{margin-bottom:10px;font-size:1.15rem;}
+  .service-card p{color:var(--gray);font-size:.95rem;}
+
+  .why{background:var(--navy);color:#fff;}
+  .why .section-title p{color:#c4ccd4;}
+  .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center;}
+  .why-card .num{font-size:2rem;font-weight:800;color:var(--gold);margin-bottom:8px;}
+  .why-card h4{margin-bottom:8px;}
+  .why-card p{color:#b7c0c9;font-size:.9rem;}
+
+  .contact{background:#fff;}
+  .contact-box{background:var(--light);border-radius:14px;padding:50px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;border:1px solid #e6e2d8;}
+  .contact-box h3{font-size:1.7rem;margin-bottom:14px;}
+  .contact-box p{color:var(--gray);margin-bottom:24px;}
+  .contact-detail{display:flex;align-items:center;gap:14px;margin-bottom:18px;}
+  .contact-detail .icon{width:46px;height:46px;background:var(--navy);color:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;}
+  .contact-detail a, .contact-detail span{font-weight:700;font-size:1.05rem;}
+  .contact-cta{display:flex;flex-direction:column;gap:16px;align-items:center;justify-content:center;background:var(--navy);border-radius:10px;padding:40px 24px;text-align:center;}
+  .contact-cta p{color:#cfd6dd;margin-bottom:0;}
+  .phone-big{font-size:1.8rem;font-weight:800;color:var(--gold);}
+
+  footer{background:var(--navy-dark);color:#cfd6dd;padding:36px 24px;text-align:center;font-size:.9rem;}
+  footer .logo{margin-bottom:10px;display:inline-block;}
+
+  @media(max-width:860px){
+    .about-grid, .contact-box{grid-template-columns:1fr;}
+    .services-grid{grid-template-columns:1fr 1fr;}
+    .why-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media(max-width:640px){
+    .nav-links{position:fixed;top:64px;left:0;right:0;background:var(--navy);flex-direction:column;padding:20px 24px;gap:18px;display:none;}
+    .nav-links.open{display:flex;}
+    .menu-toggle{display:flex;}
+    .services-grid{grid-template-columns:1fr;}
+    .why-grid{grid-template-columns:1fr 1fr;}
+    .hero h1{font-size:2rem;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="navbar">
+    <div class="logo">Mathura<span> RealEstate View</span></div>
+    <nav class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>Your Trusted Partner in <span>Real Estate</span></h1>
+  <p>Mathura RealEstate View is a reliable and trustworthy property agency, helping people buy, sell and rent real estate with honesty and confidence.</p>
+  <div class="btn-group">
+    <a href="tel:+918679951022" class="btn btn-primary">Call +91 8679951022</a>
+    <a href="#contact" class="btn btn-outline">Get In Touch</a>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container about-grid">
+    <div class="about-text">
+      <span class="tag">Who We Are</span>
+      <h3>A Real Estate Agency Built On Trust</h3>
+      <p>We work as an agency for real estate property, connecting buyers, sellers and tenants with genuine opportunities across Mathura and beyond. Every deal we handle is guided by honesty, transparency and a commitment to our clients' best interests.</p>
+      <p>Whether you are looking for your first home, an investment property, or a reliable tenant, our team is here to make the process simple and stress-free.</p>
+      <ul class="trust-points">
+        <li>Reliable Service</li>
+        <li>Trustworthy Dealings</li>
+        <li>Local Market Expertise</li>
+        <li>Personalised Support</li>
+      </ul>
+    </div>
+    <div>
+      <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=900&q=80" alt="Real estate property in Mathura">
+    </div>
+  </div>
+</section>
+
+<section id="services" class="services">
+  <div class="container">
+    <div class="section-title">
+      <span class="tag">What We Do</span>
+      <h2>Our Services</h2>
+      <p>End-to-end real estate solutions handled by people you can rely on.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">&#127968;</div>
+        <h3>Property Sales</h3>
+        <p>Helping owners find genuine, serious buyers for their residential and commercial properties.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#128188;</div>
+        <h3>Property Purchase</h3>
+        <p>Guiding buyers to the right property with honest advice and complete transparency.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">&#128273;</div>
+        <h3>Rentals &amp; Leasing</h3>
+        <p>Connecting tenants and landlords for a smooth, reliable renting experience.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why" class="why">
+  <div class="container">
+    <div class="section-title">
+      <span class="tag">Why Choose Us</span>
+      <h2>People You Can Rely On</h2>
+      <p>We believe real estate should be simple, honest and stress-free.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="num">100%</div>
+        <h4>Trustworthy</h4>
+        <p>Honest dealings, every time.</p>
+      </div>
+      <div class="why-card">
+        <div class="num">24/7</div>
+        <h4>Reachable</h4>
+        <p>Always available to assist you.</p>
+      </div>
+      <div class="why-card">
+        <div class="num">Local</div>
+        <h4>Expertise</h4>
+        <p>Deep knowledge of Mathura's market.</p>
+      </div>
+      <div class="why-card">
+        <div class="num">1:1</div>
+        <h4>Personal Support</h4>
+        <p>Dedicated attention to every client.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="section-title">
+      <span class="tag">Get In Touch</span>
+      <h2>Contact Mathura RealEstate View</h2>
+      <p>Reliable and trustable people are ready to help you find or list your next property.</p>
+    </div>
+    <div class="contact-box">
+      <div>
+        <h3>Let's Talk Property</h3>
+        <p>Reach out to us directly and our team will assist you with all your real estate needs.</p>
+        <div class="contact-detail">
+          <div class="icon">&#128222;</div>
+          <a href="tel:+918679951022">+91 8679951022</a>
+        </div>
+        <div class="contact-detail">
+          <div class="icon">&#128172;</div>
+          <a href="https://wa.me/918679951022" target="_blank" rel="noopener">Chat on WhatsApp</a>
+        </div>
+        <div class="contact-detail">
+          <div class="icon">&#128205;</div>
+          <span>Mathura, Uttar Pradesh, India</span>
+        </div>
+      </div>
+      <div class="contact-cta">
+        <p>Prefer to call directly?</p>
+        <div class="phone-big">+91 8679951022</div>
+        <a href="tel:+918679951022" class="btn btn-primary">Call Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="logo">Mathura RealEstate View</div>
+  <p>&copy; <span id="year"></span> Mathura RealEstate View. All rights reserved.</p>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  menuToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+</script>
+</body>
+</html>
