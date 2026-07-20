@@ -87,6 +87,9 @@ section{padding:80px 24px;}
 
 footer{background:var(--navy-dark);color:#cfd6dd;padding:36px 24px;text-align:center;font-size:.9rem;}
 .footer-logo-img{height:50px;width:auto;display:inline-block;margin-bottom:14px;}
+.footer-links{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-bottom:16px;}
+.footer-links a{color:#cfd6dd;font-size:.85rem;transition:color .2s;}
+.footer-links a:hover{color:var(--gold);}
 
 @media(max-width:860px){
 .about-grid, .contact-box{grid-template-columns:1fr;}
@@ -246,6 +249,11 @@ footer{background:var(--navy-dark);color:#cfd6dd;padding:36px 24px;text-align:ce
 
 <footer>
 <img src="logo.svg" alt="Mathura RealEstate View logo" class="footer-logo-img">
+<div class="footer-links">
+<a href="https://crm.mathurarealestateview.xyz/privacy-policy.html">Privacy Policy</a>
+<a href="https://crm.mathurarealestateview.xyz/terms-of-service.html">Terms of Service</a>
+<a href="https://crm.mathurarealestateview.xyz/privacy-policy.html#data-deletion">Data Deletion</a>
+</div>
 <p>&copy; <span id="year"></span> Mathura RealEstate View. All rights reserved.</p>
 </footer>
 
