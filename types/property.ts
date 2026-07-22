@@ -21,6 +21,7 @@ export interface PublicProperty {
   locality?: string;
   landmark?: string;
   address?: string;
+  state?: string;
   pincode?: string;
   latitude?: number;
   longitude?: number;
@@ -59,4 +60,32 @@ export interface PublicProperty {
   ageOfProperty?: string;
   documents?: PropertyDocument[];
   created_at?: string;
+}
+
+export interface PropertyListResponse {
+  items: PublicProperty[];
+  total: number;
+  page: number;
+  pages: number;
+}
+
+export interface PropertyFilterOptions {
+  cities: string[];
+  areas: string[];
+}
+
+export interface PropertySearchParams {
+  page?: string;
+  limit?: string;
+  city?: string;
+  area?: string;
+  type?: string;
+  bedrooms?: string;
+  budgetMin?: string;
+  budgetMax?: string;
+  sizeMin?: string;
+  sizeMax?: string;
+  possession?: string;
+  sort?: string;
+  search?: string;
 }

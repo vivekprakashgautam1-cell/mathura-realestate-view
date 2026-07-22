@@ -26,3 +26,16 @@ body {
   background: var(--light);
   color: var(--navy);
 }
+
+/* Styling for admin-authored rich text (property description/highlight),
+   which arrives as raw HTML from the CRM's WYSIWYG editor. */
+.rich-content p {
+  margin-bottom: 0.75em;
+}
+.rich-content ul {
+  list-style: disc;
+  padding-left: 1.25em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35em;
+}
