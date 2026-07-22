@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+:root {
+  /* Same palette as the current static site and the CRM admin app. */
+  --navy: #0f2438;
+  --navy-dark: #0a1a29;
+  --gold: #c9a24b;
+  --light: #f6f4ef;
+  --gray: #5c6773;
+}
+
+@theme inline {
+  --color-navy: var(--navy);
+  --color-navy-dark: var(--navy-dark);
+  --color-gold: var(--gold);
+  --color-light: var(--light);
+  --color-gray: var(--gray);
+  --font-sans: "Segoe UI", Arial, Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--light);
+  color: var(--navy);
+}
