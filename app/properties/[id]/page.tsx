@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { getPropertyById } from "@/lib/api";
-import { formatCurrencyINR, statusLabel, stripHtml } from "@/lib/format";
+import { formatCurrencyINR, formatPricePerUnit, statusLabel, stripHtml } from "@/lib/format";
 import { PropertyGallery } from "@/components/PropertyGallery";
 import { NearbyAndMap } from "@/components/NearbyAndMap";
 import { EnquiryForm } from "@/components/EnquiryForm";
@@ -64,7 +64,7 @@ export default async function PropertyDetailPage({ params }: { params: Promise<{
             {property.type && <span><strong className="text-navy">{property.type}</strong></span>}
             {!!property.bedrooms && <span>🛏️ {property.bedrooms} Bed</span>}
             {!!property.bathrooms && <span>🛁 {property.bathrooms} Bath</span>}
-            {!!property.sqft && <span>📐 {property.sqft} sqft</span>}
+            {!!property.sqft && <span>📐 {property.sqft} {property.sizeUnit ?? "Sq Ft"}</span>}
             {property.possession && <span>🏗️ {property.possession}</span>}
             {property.reraNumber && <span>RERA: {property.reraNumber}</span>}
           </div>
@@ -146,7 +146,7 @@ export default async function PropertyDetailPage({ params }: { params: Promise<{
           <div className="rounded-xl border border-[#e6e2d8] bg-white p-6">
             <p className="text-3xl font-extrabold text-navy">{formatCurrencyINR(property.price)}</p>
             {!!property.sqft && (
-              <p className="text-sm text-gray">₹{Math.round(property.price / property.sqft).toLocaleString("en-IN")}/sqft</p>
+              <p className="text-sm text-gray">{formatPricePerUnit(property.price, property.sqft, property.sizeUnit)}</p>
             )}
             <div className="mt-4 flex flex-col gap-2">
               <a

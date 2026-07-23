@@ -1,3 +1,5 @@
+import type { SizeUnit } from "@/types/property";
+
 // Same formatting rules as the CRM admin app (src/lib/utils.ts) so prices
 // read identically across both the internal CRM and this public site.
 export function formatCurrencyINR(n?: number): string {
@@ -7,9 +9,9 @@ export function formatCurrencyINR(n?: number): string {
   return "₹" + (n / 1000).toFixed(0) + "K";
 }
 
-export function formatPricePerSqft(price?: number, sqft?: number): string {
-  if (!price || !sqft) return "—";
-  return "₹" + Math.round(price / sqft).toLocaleString("en-IN") + "/sqft";
+export function formatPricePerUnit(price?: number, size?: number, unit: SizeUnit = "Sq Ft"): string {
+  if (!price || !size) return "—";
+  return "₹" + Math.round(price / size).toLocaleString("en-IN") + "/" + unit;
 }
 
 export function stripHtml(html?: string): string {

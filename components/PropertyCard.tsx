@@ -51,7 +51,7 @@ export function PropertyCard({ property }: { property: PublicProperty }) {
           {property.type && <span className="rounded bg-light px-2 py-1 font-medium text-navy">{property.type}</span>}
           {!!property.bedrooms && <span>{property.bedrooms} Bed</span>}
           {!!property.bathrooms && <span>{property.bathrooms} Bath</span>}
-          {!!property.sqft && <span>{property.sqft} sqft</span>}
+          {!!property.sqft && <span>{property.sqft} {property.sizeUnit ?? "Sq Ft"}</span>}
         </div>
 
         {description && <p className="line-clamp-2 text-sm text-gray">{description}</p>}

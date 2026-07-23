@@ -97,11 +97,11 @@ export function PropertiesFilterForm({
       </div>
 
       <div className="flex flex-col gap-1">
-        <label htmlFor="sizeMin" className={labelClass}>Size Min (sqft)</label>
+        <label htmlFor="sizeMin" className={labelClass}>Size Min</label>
         <input id="sizeMin" type="number" name="sizeMin" min={0} defaultValue={current.sizeMin ?? ""} placeholder="Min" className={inputClass} />
       </div>
       <div className="flex flex-col gap-1">
-        <label htmlFor="sizeMax" className={labelClass}>Size Max (sqft)</label>
+        <label htmlFor="sizeMax" className={labelClass}>Size Max</label>
         <input id="sizeMax" type="number" name="sizeMax" min={0} defaultValue={current.sizeMax ?? ""} placeholder="Max" className={inputClass} />
       </div>
 

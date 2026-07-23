@@ -3,6 +3,8 @@
 // internal-CRM fields here, the backend won't send them anyway.
 export type PropertyStatus = "Available" | "Reserved" | "Sold" | "Under Construction";
 
+export type SizeUnit = "Sq Ft" | "Sq Yd";
+
 export interface PropertyDocument {
   category: string;
   name: string;
@@ -29,6 +31,7 @@ export interface PublicProperty {
   builder?: string;
   price: number;
   sqft?: number;
+  sizeUnit?: SizeUnit;
   bedrooms?: number;
   bathrooms?: number;
   balconies?: number;
